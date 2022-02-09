@@ -1,12 +1,35 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import './button.css'
 
 function Button(props) {
 
+    function Enter() {
+
+
+
+        if( props.n === '=') {
+            props.stateParser("6")
+        }
+        if(props.modifier === null){
+            console.log(props.n);
+            props.stateParser(props.n);
+        }
+        //console.log(props.data);
+        //props.stateParser(props.data);
+    }
+
+    
+    function numberPush() {
+
+    }
+
     return(
-        <div className="test">
-            <button onClick={() => props.stateParser(props.value)}>{props.value}</button>
+        <div>
+            <button className={"test"} onClick={ Enter }>
+                {props.n}
+            </button>
+            
         </div>
     );
 }
